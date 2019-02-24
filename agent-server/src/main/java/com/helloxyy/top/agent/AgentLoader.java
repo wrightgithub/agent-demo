@@ -16,10 +16,9 @@ import java.util.Optional;
 public class AgentLoader {
 
     private static Logger logger = LoggerFactory.getLogger(AgentLoader.class);
-    private static String dir    = System.getProperty("user.dir");
+    private static String dir    = System.getProperty("user.dir")+"/agent-server";
 
     public static void run() {
-        //todo 指定jar路径 ，如果idea启动 请改dir为/Users/lihao/mygitpro/agent-demo/demo-app
         String agentFilePath = dir + "/target/myAgent-jar-with-dependencies.jar";
 
         //需要attach的进程标识
