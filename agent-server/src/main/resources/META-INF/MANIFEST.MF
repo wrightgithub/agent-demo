@@ -1,4 +1,4 @@
-Main-Class: com.helloxyy.top.application.Launcher
+Main-Class: com.helloxyy.top.agent.Launcher
 Agent-Class: com.helloxyy.top.agent.MyInstrumentationAgent
 Can-Redefine-Classes: true
 Can-Retransform-Classes: true

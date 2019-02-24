@@ -1,4 +1,4 @@
-package com.helloxyy.top.application;
+package com.helloxyy.top.agent;
 
 import com.sun.tools.attach.VirtualMachine;
 import org.slf4j.Logger;
@@ -19,11 +19,11 @@ public class AgentLoader {
     private static String dir    = System.getProperty("user.dir");
 
     public static void run() {
-        //指定jar路径
+        //todo 指定jar路径 ，如果idea启动 请改dir为/Users/lihao/mygitpro/agent-demo/demo-app
         String agentFilePath = dir + "/target/myAgent-jar-with-dependencies.jar";
 
         //需要attach的进程标识
-        String applicationName = "myAgent";
+        String applicationName = "demo-app";
 
         //查到需要监控的进程
         Optional<String> jvmProcessOpt = Optional.ofNullable(VirtualMachine.list()
