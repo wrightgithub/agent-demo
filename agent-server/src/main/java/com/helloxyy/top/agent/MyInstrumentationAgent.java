@@ -35,15 +35,6 @@ public class MyInstrumentationAgent {
         } catch (Exception ex) {
             logger.error("Class [{}] not found with Class.forName", className);
         }
-        // otherwise iterate all loaded classes and find what we want
-        for (Class<?> clazz : instrumentation.getAllLoadedClasses()) {
-            if (clazz.getName().equals(className)) {
-                targetCls = clazz;
-                targetClassLoader = targetCls.getClassLoader();
-                transform(targetCls, targetClassLoader, instrumentation);
-                return;
-            }
-        }
         throw new RuntimeException("Failed to find class [" + className + "]");
     }
 
